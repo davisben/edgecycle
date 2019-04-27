@@ -13,6 +13,10 @@ class EdgeCycleView extends WatchUi.DataField {
     hidden var currentHeartRate;
     hidden var time;
 
+    function initialize() {
+        DataField.initialize();
+    }
+
 	function compute(info) {
 		// Current speed
 		var speed = info.currentSpeed ? info.currentSpeed : 0.0;
@@ -71,7 +75,6 @@ class EdgeCycleView extends WatchUi.DataField {
         dc.drawText(width / 4, height - (rowHeight - 45), Graphics.FONT_NUMBER_HOT, currentHeartRate, CENTER);
         dc.drawText(width - (width / 4), height - (rowHeight - 10), Graphics.FONT_TINY, "Time", CENTER);
         dc.drawText(width - (width / 4), height - (rowHeight - 40), Graphics.FONT_NUMBER_MEDIUM, time, CENTER);
-        
     }
 
 }
